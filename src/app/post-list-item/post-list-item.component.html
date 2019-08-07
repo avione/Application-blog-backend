@@ -1,0 +1,14 @@
+<li [ngClass]="{'list-group-item': true,
+              'list-group-item-success': post.loveIts > 0,
+              'list-group-item-danger': post.loveIts < 0 }">
+              <p style="float: right;color:black"><i><b>{{ post.author}}</b> &nbsp;{{ post.create_at | date: 'short' : 'fr-FR' }}</i></p>
+  <h4 [ngStyle]="{color: getColor()}" style="font-weight: 500;">{{ post.title }} </h4>
+  <p [ngStyle]="{color: getColor()}">Post index: {{ idpost+1 }}
+  <p [ngStyle]="{color: getColor()}">{{ post.content }}</p>
+  <br>
+  <button class="btn btn-success" (click)="onLoveIts()">Love it</button>
+  <button class="btn btn-danger" (click)="onDontLoveIts()">Don't Love it</button>
+  <button class="btn btn-primary pull-right" [disabled]="post.author.toLowerCase()!==username" (click)="onDeletePost()" style="float: right;" *ngIf="isAuth">Supprimer</button>
+  <button class="btn btn-success pull-right" [disabled]="post.author.toLowerCase()!==username" (click)="onEditPost()" style="float: right;" *ngIf="isAuth">Modifier</button>
+  <button class="btn btn-success pull-right" (click)="onViewPost()" style="float: right;" *ngIf="isAuth">Voire plus</button>
+</li>

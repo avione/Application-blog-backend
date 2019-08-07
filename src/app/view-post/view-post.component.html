@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-xs-12">
+    <h3 class="fontweight">Vue complète du Post</h3>
+    <ul class="list-group">
+      <li [ngClass]="{'list-group-item': true,
+        'list-group-item-success': loveIts > 0,
+        'list-group-item-danger': loveIts < 0 }">
+        <p style="float: right;color:black"><i><b>{{ author}}</b> &nbsp;{{ create_at | date : 'short' : 'fr-FR' }}</i></p>
+        <h4 [ngStyle]="{color: getColor()}" style="font-weight: 500;">{{ title }} </h4>
+        <p [ngStyle]="{color: getColor()}">Post index: {{ id }}
+          <p [ngStyle]="{color: getColor()}">{{ content }}</p>
+          <img style="max-width:200px;" *ngIf="photo" [src]="post.photo">
+          <br>
+          <div [ngClass]="{'zeroloveIts': loveIts == 0,'loveIts': loveIts > 0,'dontloveIts': loveIts < 0 }">
+          <p [ngStyle]="{color: getColor()}">nb loveIts : {{ loveIts }}</p>
+         </div>
+          <button class="btn btn-primary pull-right" (click)="onBack()" style="float: right;">Retour</button>
+      </li>
+    </ul>
+  </div>
+</div>

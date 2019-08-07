@@ -1,0 +1,58 @@
+<!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark default-color">
+  <a class="navbar-brand" href="#">Application Blog</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
+    aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
+
+    <!-- Links -->
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link waves-light" routerLink="accueil">Accueil</a>
+      </li>
+      <!-- Dropdown -->
+      <li class="nav-item dropdown" dropdown>
+        <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+          Posts<span class="caret"></span></a>
+        <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+          <a class="dropdown-item waves-light" mdbWavesEffect routerLink="posts">Liste des Posts</a>
+          <div class="divider dropdown-divider"></div>
+          <a class="dropdown-item waves-light" mdbWavesEffect routerLink="posts/new" *ngIf="isAuth">Nouveau Post</a>
+        </div>
+      </li>
+    </ul>
+    <form class="form-inline waves-light" mdbWavesEffect><!--[formGroup]="findForm" (ngSubmit)="onFormSubmit()" (click)="onFormSubmit()" (change)="onChange($event)" -->
+        <div class="md-form my-0">
+            <input class="form-control mr-sm-2" type="text" (keydown)="onKeydown($event)" [formControl]="findtext" placeholder="Rechercher un post" >
+            <a class="search" ><i (click)="onFormSubmit()" class="fas fa-search"></i></a>
+        </div>
+    </form>
+
+    <ul class="navbar-nav ml-auto nav-flex-icons">
+        <li routerLinkActive="active">
+            <a class="nav-link waves-light" routerLink="auth/signup" *ngIf="!isAuth">Créer un compte</a>
+          </li>
+          <li routerLinkActive="active">
+            <a class="nav-link waves-light" routerLink="auth/signin" *ngIf="!isAuth">Connexion</a>
+          </li>
+          <li><a class="nav-link waves-light fontweight">{{email}}</a></li>
+      <li class="nav-item dropdown" dropdown>
+        <a dropdownToggle mdbWavesEffect class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333"
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-user"></i>
+        </a>
+        <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown-default"
+          aria-labelledby="navbarDropdownMenuLink-333">
+          <a class="dropdown-item" routerLink="auth/signin" *ngIf="!isAuth">Connexion</a>
+          <a class="dropdown-item" routerLink="auth/signup" *ngIf="!isAuth">Créer un Compte</a>
+          <a class="dropdown-item" (click)="onSignOut()" style="cursor:pointer" *ngIf="isAuth">Déconnexion</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <!--/nav -->
+</mdb-navbar>
+
+<p class="text-danger">{{ errorMessage }}</p>
