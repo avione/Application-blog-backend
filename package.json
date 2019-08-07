@@ -1,5 +1,5 @@
 {
-  "name": "applicationblog-frontend",
+  "name": "application-blog-backend",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
