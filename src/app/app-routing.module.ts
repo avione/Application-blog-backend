@@ -3,7 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { SignupComponent } from './auth/signup/signup.component';
 import { SigninComponent } from './auth/signin/signin.component';
 import { PostListComponent } from './post-list/post-list.component';
-import { FindPostComponent } from './find-post/find-post.component';
 import { NewPostComponent } from './new-post/new-post.component';
 import { EditPostComponent } from './edit-post/edit-post.component';
 import { ViewPostComponent } from './view-post/view-post.component';

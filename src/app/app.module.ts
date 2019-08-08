@@ -26,7 +26,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { PostListItemComponent } from './post-list-item/post-list-item.component';
 import { AccueilComponent } from './accueil/accueil.component';
-import { FindPostComponent } from './find-post/find-post.component';
+
 
 @NgModule({
   declarations: [
@@ -39,8 +39,7 @@ import { FindPostComponent } from './find-post/find-post.component';
     NewPostComponent,
     EditPostComponent,
     HeaderComponent,
-    AccueilComponent,
-    FindPostComponent
+    AccueilComponent
   ],
   imports: [
     BrowserModule,
