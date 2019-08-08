@@ -7,13 +7,16 @@
 * Dans cet exemple : j'ai utilisé les directives structurelles *ngFor, ngStyle et ngClass  pour les components  PostListComponent,  PostListItemComponent et l'utilisation de @Input()  post: Post; pour le passage des élements title, content, create_at, loveits.
 
 # Utilisation de LOCALE_ID: 
-Pour l'utilsation des dates en angular 8 et pour le format des dates
+Pour l'utilsation des dates en angular 8 et pour le format des dates.
+
 Il faut ajouter les import suivant dans app.module.ts:
 - import { LOCALE_ID } from '@angular/core';
 - import { registerLocaleData } from '@angular/common';
 - import localeFr from '@angular/common/locales/fr';
 - registerLocaleData(localeFr, 'fr-FR');
-et indiquer sur la ligne providers: {provide: LOCALE_ID, useValue: 'fr-FR' }
+
+Renseigner ensuite la ligne providers:
+
 providers: [{provide: LOCALE_ID, useValue: 'fr-FR' }]
 
 
@@ -31,20 +34,23 @@ providers: [{provide: LOCALE_ID, useValue: 'fr-FR' }]
 - Positionnez-vous ensuite dans le répertoire test et exécuter la commande : 
 #		npm install
 
-- Pour firebase vous devez aller sur le site firebase.google.com vous connectez avec votre compte google et accéder en suite à la console.
-- Creer un nouveau projet, récupérer les clés de config firebase et l'ajouter dans le fichier app.component.ts
+# Pour firebase :
+- Vous devez aller sur le site http://firebase.google.com 
+- Vous connectez avec votre compte google et accéder en suite à la console.
+- Créer un nouveau projet, récupérer les clés de config firebase et l'ajouter dans le fichier app.component.ts
 
 Voici un exemple fictif de clés:
-var firebaseConfig = {
-    apiKey: "AIzaYyBlAsLPyKJ0z2ckhy2Vxtt_D9ThpHN5FWE",
-    authDomain: "app-blog-3a974.firebaseapp.com",
-    databaseURL: "https://app-blog-3a974.firebaseio.com",
-    projectId: "app-blog-3a974",
-    storageBucket: "app-blog-3a974.appspot.com",
-    messagingSenderId: "21310261064",
-    appId: "1:21310261064:web:76e97c8b65d50748"
- };
- Ajouter les authorisation de lecture et écriture pour l'authenfication des utilisateurs dans votre projet Firebase et une base de donnée en mode Realtime
+- var firebaseConfig = {
+-    apiKey: "AIzaYyBlAsLPyKJ0z2ckhy2Vxtt_D9ThpHN5FWE",
+-    authDomain: "app-blog-3a974.firebaseapp.com",
+-    databaseURL: "https://app-blog-3a974.firebaseio.com",
+-    projectId: "app-blog-3a974",
+-    storageBucket: "app-blog-3a974.appspot.com",
+-    messagingSenderId: "21310261064",
+-    appId: "1:21310261064:web:76e97c8b65d50748"
+- };
+
+Ajouter les authorisation de lecture et écriture pour l'authenfication des utilisateurs dans votre projet Firebase et une base de donnée en mode Realtime
 
 - Une fois que c'est terminé éxecuter la commande : 
 #		ng serve
