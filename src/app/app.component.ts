@@ -11,13 +11,13 @@ export class AppComponent {
   constructor() {
     // Your web app's Firebase configuration
   var firebaseConfig = {
-    apiKey: "AIzaSyBlBsLPyKJ0z2cjhy2Vxtt_F9ThpHN5FWE",
-    authDomain: "mes-livres-3a071.firebaseapp.com",
-    databaseURL: "https://mes-livres-3a071.firebaseio.com",
-    projectId: "mes-livres-3a071",
-    storageBucket: "mes-livres-3a071.appspot.com",
-    messagingSenderId: "21310261064",
-    appId: "1:21310261064:web:76e97c8b65d50748"
+    apiKey: "your.apiKey",
+    authDomain: "your.authDomain.frebaseapp.com",
+    databaseURL: "https://your.databaseURL.firebaseio.com",
+    projectId: "your.ProjectId",
+    storageBucket: "your.storage.Bucket.appspot.com",
+    messagingSenderId: "your.messagingSenderId",
+    appId: "your.appId"
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
